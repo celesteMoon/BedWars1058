@@ -83,6 +83,9 @@ public class UpgradeTier {
                         case "bow":
                             apply = EnchantItemAction.ApplyType.BOW;
                             break;
+                        case "helmet":
+                            apply = EnchantItemAction.ApplyType.HELMET;
+                            break;
                     }
                     if (apply == null) {
                         BedWars.plugin.getLogger().warning("Invalid apply type " + data[2] + " at upgrades2: " + parentName + "." + name);

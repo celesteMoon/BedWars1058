@@ -186,6 +186,15 @@ public class v1_18_R2 extends VersionSupport {
     }
 
     @Override
+    public boolean isHelmet(org.bukkit.inventory.ItemStack itemStack) {
+        if (CraftItemStack.asNMSCopy(itemStack) == null) return false;
+        if (CraftItemStack.asNMSCopy(itemStack).c() == null) return false;
+        if (!(CraftItemStack.asNMSCopy(itemStack).c() instanceof ItemArmor)) return false;
+        ItemArmor ia = (ItemArmor)CraftItemStack.asNMSCopy(itemStack).c();
+        return ia.b() == EnumItemSlot.f;
+    }
+
+    @Override
     public boolean isTool(org.bukkit.inventory.ItemStack itemStack) {
         if (CraftItemStack.asNMSCopy(itemStack) == null) return false;
         if (CraftItemStack.asNMSCopy(itemStack).c() == null) return false;

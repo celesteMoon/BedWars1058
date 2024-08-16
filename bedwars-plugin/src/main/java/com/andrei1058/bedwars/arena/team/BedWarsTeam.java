@@ -608,7 +608,7 @@ public class BedWarsTeam implements ITeam {
         for (Player p : getMembers()) {
             for (ItemStack i : p.getInventory().getContents()) {
                 if (i == null) continue;
-                if (nms.isSword(i) || nms.isAxe(i)) {
+                if (nms.isSword(i)/* || nms.isAxe(i)*/) {
                     ItemMeta im = i.getItemMeta();
                     im.addEnchant(e, a, true);
                     i.setItemMeta(im);
@@ -627,6 +627,38 @@ public class BedWarsTeam implements ITeam {
             for (ItemStack i : p.getInventory().getArmorContents()) {
                 if (i == null) continue;
                 if (nms.isArmor(i)) {
+                    ItemMeta im = i.getItemMeta();
+                    im.addEnchant(e, a, true);
+                    i.setItemMeta(im);
+                }
+            }
+            p.updateInventory();
+        }
+
+        // #274
+        Bukkit.getScheduler().runTaskLater(BedWars.plugin, () -> {
+            for (Player m : getMembers()) {
+                if (m.hasPotionEffect(PotionEffectType.INVISIBILITY)) {
+                    for (Player p : getArena().getPlayers()) {
+                        BedWars.nms.hideArmor(m, p);
+                    }
+                    for (Player p : getArena().getSpectators()) {
+                        BedWars.nms.hideArmor(m, p);
+                    }
+                }
+            }
+        }, 20L);
+    }
+
+    /**
+     * Used when someone buys a new enchantment with apply == helmet
+     */
+    public void addHelmetEnchantment(Enchantment e, int a) {
+        getArmorsEnchantments().add(new Enchant(e, a));
+        for (Player p : getMembers()) {
+            for (ItemStack i : p.getInventory().getArmorContents()) {
+                if (i == null) continue;
+                if (nms.isHelmet(i)) {
                     ItemMeta im = i.getItemMeta();
                     im.addEnchant(e, a, true);
                     i.setItemMeta(im);

@@ -104,6 +104,11 @@ public abstract class VersionSupport {
     public abstract boolean isArmor(ItemStack itemStack);
 
     /**
+     * Check if item-stack is helmet
+     */
+    public abstract boolean isHelmet(ItemStack itemStack);
+
+    /**
      * Check if item-stack is a tool
      */
     public abstract boolean isTool(ItemStack itemStack);

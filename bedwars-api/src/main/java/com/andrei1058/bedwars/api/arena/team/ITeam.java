@@ -223,6 +223,14 @@ public interface ITeam {
     void addArmorEnchantment(Enchantment e, int a);
 
     /**
+     * Used when someone buys a new enchantment with apply == helmet.
+     *
+     * @param e enchant.
+     * @param a amplifier.
+     */
+    void addHelmetEnchantment(Enchantment e, int a);
+
+    /**
      * Check if target has played in this match.
      *
      * @param u player uuid.
