@@ -44,6 +44,7 @@ import com.andrei1058.bedwars.support.paper.TeleportManager;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
+import org.bukkit.Sound;
 import org.bukkit.entity.*;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
@@ -53,6 +54,8 @@ import org.bukkit.event.player.PlayerItemConsumeEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.event.player.PlayerRespawnEvent;
 import org.bukkit.event.player.PlayerTeleportEvent;
+import org.bukkit.potion.PotionData;
+import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 import org.bukkit.projectiles.ProjectileSource;
 import org.bukkit.util.Vector;
@@ -149,6 +152,29 @@ public class DamageDeathMove implements Listener {
                 .replace("{TeamName}", team.getDisplayName(lang))
                 .replace("{PlayerName}", ChatColor.stripColor(p.getDisplayName()));
         damager.sendMessage(message);
+
+        // celesteMoon - antiArrowKBPotion
+        if (p.hasPotionEffect(PotionEffectType.LUCK)) {
+            if (projectile instanceof SpectralArrow) {
+                p.addPotionEffect(new PotionEffect(PotionEffectType.GLOWING, 200, 0));
+            }
+            /* todo: add tipped arrow support.
+                difficulties: minecraft stores PotionData in tipped arrows, but the .addPotionEffect method uses PotionEffectType
+                minecraft itself seems does not offer a way to convert
+            *  */
+//            if (projectile instanceof Arrow) {
+//                PotionData potionData = ((Arrow) projectile).getBasePotionData();
+//                PotionEffectType effectType = potionData.getType().getEffectType();
+//            }
+            p.damage(e.getDamage());
+            //what's the difference between these two methods?
+            p.setArrowsInBody(p.getArrowsInBody()+1);
+            //player.setArrowsStuck(player.getArrowsStuck()+1);
+            damager.playSound(damager.getLocation(), Sound.ENTITY_ARROW_HIT_PLAYER, 0.5f, 0.5f);
+            p.getWorld().playSound(p.getLocation(), Sound.ENTITY_ARROW_HIT, 1.0f, 1.0f);
+            projectile.remove();
+            e.setCancelled(true);
+        }
     }
 
     @EventHandler
