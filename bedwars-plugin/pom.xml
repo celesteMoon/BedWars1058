@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>bedwars-plugin</artifactId>
     <packaging>jar</packaging>
-    <version>${project.parent.version}</version>
+    <version>214.2.0</version>
 <!--    <version>214.1.1</version>-->
 
     <pluginRepositories>
@@ -141,72 +141,72 @@
         <dependency>
             <groupId>com.andrei1058.bedwars</groupId>
             <artifactId>bedwars-api</artifactId>
-            <version>${project.version}</version>
+            <version>${project.parent.version}</version>
         </dependency>
 <!--        <dependency>-->
 <!--            <groupId>com.andrei1058.bedwars</groupId>-->
 <!--            <artifactId>versionsupport_1_8_R3</artifactId>-->
-<!--            <version>${project.version}</version>-->
+<!--            <version>${project.parent.version}</version>-->
 <!--        </dependency>-->
         <dependency>
             <groupId>com.andrei1058.bedwars</groupId>
             <artifactId>resetadapter-slime</artifactId>
-            <version>${project.version}</version>
+            <version>${project.parent.version}</version>
         </dependency>
 <!--        <dependency>-->
 <!--            <groupId>com.andrei1058.bedwars</groupId>-->
 <!--            <artifactId>versionsupport_1_12_R1</artifactId>-->
-<!--            <version>${project.version}</version>-->
+<!--            <version>${project.parent.version}</version>-->
 <!--        </dependency>-->
 <!--        <dependency>-->
 <!--            <groupId>com.andrei1058.bedwars</groupId>-->
 <!--            <artifactId>versionsupport_v1_16_R3</artifactId>-->
-<!--            <version>${project.version}</version>-->
+<!--            <version>${project.parent.version}</version>-->
 <!--        </dependency>-->
 <!--        <dependency>-->
 <!--            <groupId>com.andrei1058.bedwars</groupId>-->
 <!--            <artifactId>versionsupport_v1_17_R1</artifactId>-->
-<!--            <version>${project.version}</version>-->
+<!--            <version>${project.parent.version}</version>-->
 <!--        </dependency>-->
         <dependency>
             <groupId>com.andrei1058.bedwars</groupId>
             <artifactId>versionsupport_v1_18_R2</artifactId>
-            <version>${project.version}</version>
+            <version>${project.parent.version}</version>
         </dependency>
 <!--        <dependency>-->
 <!--            <groupId>com.andrei1058.bedwars</groupId>-->
 <!--            <artifactId>versionsupport_v1_19_R2</artifactId>-->
-<!--            <version>${project.version}</version>-->
+<!--            <version>${project.parent.version}</version>-->
 <!--        </dependency>-->
 <!--        <dependency>-->
 <!--            <groupId>com.andrei1058.bedwars</groupId>-->
 <!--            <artifactId>versionsupport_v1_19_R3</artifactId>-->
-<!--            <version>${project.version}</version>-->
+<!--            <version>${project.parent.version}</version>-->
 <!--        </dependency>-->
 <!--        <dependency>-->
 <!--            <groupId>com.andrei1058.bedwars</groupId>-->
 <!--            <artifactId>versionsupport_v1_20_R1</artifactId>-->
-<!--            <version>${project.version}</version>-->
+<!--            <version>${project.parent.version}</version>-->
 <!--        </dependency>-->
 <!--        <dependency>-->
 <!--            <groupId>com.andrei1058.bedwars</groupId>-->
 <!--            <artifactId>versionsupport_v1_20_R2</artifactId>-->
-<!--            <version>${project.version}</version>-->
+<!--            <version>${project.parent.version}</version>-->
 <!--        </dependency>-->
 <!--        <dependency>-->
 <!--            <groupId>com.andrei1058.bedwars</groupId>-->
 <!--            <artifactId>versionsupport_v1_20_R3</artifactId>-->
-<!--            <version>${project.version}</version>-->
+<!--            <version>${project.parent.version}</version>-->
 <!--        </dependency>-->
 <!--        <dependency>-->
 <!--            <groupId>com.andrei1058.bedwars</groupId>-->
 <!--            <artifactId>versionsupport_v1_20_R4</artifactId>-->
-<!--            <version>${project.version}</version>-->
+<!--            <version>${project.parent.version}</version>-->
 <!--        </dependency>-->
         <dependency>
             <groupId>com.andrei1058.bedwars</groupId>
             <artifactId>versionsupport-common</artifactId>
-            <version>${project.version}</version>
+            <version>${project.parent.version}</version>
         </dependency>
 <!--        <dependency>-->
 <!--            <groupId>org.spigotmc</groupId>-->
@@ -332,13 +332,13 @@
         <dependency>
             <groupId>com.andrei1058.bedwars</groupId>
             <artifactId>resetadapter-slimepaper</artifactId>
-            <version>${project.version}</version>
+            <version>${project.parent.version}</version>
         </dependency>
         <!-- Slime Paper -->
         <dependency>
             <groupId>com.andrei1058.bedwars</groupId>
             <artifactId>resetadapter-aswm</artifactId>
-            <version>${project.version}</version>
+            <version>${project.parent.version}</version>
         </dependency>
         <!-- End of Slime Paper -->
 
